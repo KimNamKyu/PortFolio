@@ -15,12 +15,12 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-
+import Typography from '@material-ui/core/Typography';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    display:'block'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -78,7 +78,7 @@ function Header(props) {
 
 
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position="static">
       <Toolbar style={{backgroundColor:'#fff', borderBottom: '1px solid #ddd'}}>
         <IconButton 

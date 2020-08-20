@@ -14,15 +14,13 @@ function About() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <main>
                 <div className={classes.heroContent}>
                     <Container maxWidth="sm">
                         <Typography variant="h5" align="center">
-                            ABOUT
+                            ABOUT ME
                         </Typography>
                     </Container>
                 </div>
-            </main>
         </React.Fragment>
     );
 }
