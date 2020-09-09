@@ -1,123 +1,25 @@
-// import React from 'react';
-// import MenuIcon from '@material-ui/icons/Menu';
-// import {AppBar,Toolbar,Hidden ,Drawer,IconButton, ListItem, ListItemText, List, Divider} from '@material-ui/core';
 import React from 'react';
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display:'block'
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  hide: {
-    display: 'none',
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-}));
-
+import { Layout, Menu } from 'antd';
+import { GithubOutlined } from '@ant-design/icons';
 function Header(props) {
-  const classes = useStyles();
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
-  const container = window !== undefined ? () => window().document.body : undefined;
-
+  const { Header: Head } = Layout;
 
   return (
-    <div>
-      <AppBar position="static">
-      <Toolbar style={{backgroundColor:'#fff', borderBottom: '1px solid #ddd'}}>
-        <IconButton 
-         color="black" 
-         aria-label="open drawer"
-         onClick={handleDrawerOpen}
-         edge="start"
-         className={clsx(classes.menuButton, open && classes.hide)}
-        >
-        <MenuIcon style={{color:'black'}}/>
-        </IconButton>
-      </Toolbar>
-      </AppBar>
-
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="left"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
+    <Layout>
+      {/* <Head style={{ position: 'static', width: '100%', left: 0, top: 0, right: 0, zindex: 1000, background: '#fff', height:'65px' }}> */}
+      <Head style={{ width: '100%', height: '65px', position: 'absolute', zindex: '10000', transition: 'background 0.3s ease-in 0s', top: 0, background: 'rgba(255,255,255,0.0)' }}>
+        <GithubOutlined onClick={() => {
+          window.open('https://github.com/KimNamKyu')
         }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {['Home', 'About', 'Skill', 'Project'].map((text, index) => (
-            <ListItem button key={text}>
-              {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-              <ListItemText primary={text} />
-            </ListItem>
+          style={{ fontSize: '24px', paddingRight: '30px' }} />
+        <span style={{fontSize: '24px'}}>Southkyu PortFolio</span>
+        <Menu mode="horizontal" style={{ float: 'right', borderBottom: '#fff', paddingLeft: '15px', background: 'rgba(255,255,255,0.0)', fontSize: '18px' }}>
+          {['Home', 'About', 'Skill', 'Project'].map((item, index) => (
+            <Menu.Item style={{textDecoration: "underline"}}>{item}</Menu.Item>
           ))}
-        </List>
-      </Drawer>
-    </div>
+        </Menu>
+      </Head>
+    </Layout>
   );
 }
 
