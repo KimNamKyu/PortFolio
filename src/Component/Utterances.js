@@ -1,15 +1,12 @@
 import React, { createRef, useLayoutEffect } from 'react';
-import { Layout } from 'antd';
 
-
-const Project = React.memo(({ repo }) => {
+const Utterances = React.memo(({ repo }) => {
     const containerRef = createRef();
     useLayoutEffect(() => {
-        debugger
         const utterances = document.createElement('script');
         const attributes = {
             src: "https://utteranc.es/client.js",
-            repo: "KimNamKyu / portFolio",
+            repo: "KimNamKyu/portFolio",
             'issue-term': "pathname",
             theme: "github-light",
             crossorigin: "anonymous",
@@ -24,4 +21,4 @@ const Project = React.memo(({ repo }) => {
     return React.createElement("div", { ref: containerRef });
 });
 
-export default Project;
+export default Utterances;
