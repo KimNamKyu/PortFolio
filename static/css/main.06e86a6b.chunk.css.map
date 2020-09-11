@@ -1,1 +1,0 @@
-{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,EACI,qBACJ,CAEA,KACI,QAAS,CACT,SAAU,CACV,WACJ","file":"main.06e86a6b.chunk.css","sourcesContent":["* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    margin: 0;\r\n    padding: 0;\r\n    height: 100%;\r\n}"]}
