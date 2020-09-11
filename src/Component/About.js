@@ -33,14 +33,14 @@ function About(props) {
     const [current, setCurrent] = useState(3);
 
     return (
-        <Content style={{ height: '946px', background: 'yellow', padding: "100px 50px 100px 50px", margin: '0 auto', width: '80%' }}>
+        <Content style={{ height: '946px', background: '#fff', padding: "100px 50px 100px 50px", margin: '0 auto', width: '80%' }}>
             <div style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>About</h2></div>
-                <div style={{height:'250px', background:'blue'}}>
+                <div style={{height:'250px', background:'blue', paddingTop: '50px' }}>
                     test
                 </div>
             <div style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>Career</h2></div>
             <div>
-                <div style={{ position: 'absolute', float: 'left', width: '40%', paddingTop: '50px' }}>
+                <div style={{ position: 'absolute', float: 'left', width: '40%', padding: '50px 50px 50px 50px' }}>
                     <Steps current={current} direction="vertical"
                         onChange={(index) => { setCurrent(index) }}>
                         {step.map(item => (
@@ -50,13 +50,13 @@ function About(props) {
                 </div>
 
                 <div className="steps-content" style={{
-                    marginTop: '16px',
+                    marginTop: '50px',
                     border: '1px dashed #e9e9e9',
                     borderRadius: '2px',
                     backgroundColor: 'white',
                     minHeight: '300px',
                     textAlign: 'left',
-                    padding: '50px 30px 50px 30px',
+                    padding: '50px 50px 50px 50px',
                     float: 'right',
                     width: '50%',
                     fontSize: '16px'

@@ -4,7 +4,6 @@ import { GithubOutlined } from '@ant-design/icons';
 function Header(props) {
   const { Header: Head } = Layout;
 
-  console.log(props.menuCss)
   let styles
   if(props.menuCss === 'menu'){
      styles = {
