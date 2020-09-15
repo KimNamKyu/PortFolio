@@ -40,8 +40,9 @@ function About(props) {
                 </div>
             <div style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>Career</h2></div>
             <div>
-                <div style={{ position: 'absolute', float: 'left', width: '40%', padding: '50px 50px 50px 50px' }}>
-                    <Steps current={current} direction="vertical"
+                {/* <div style={{ position: 'absolute', float: 'left', width: '40%', padding: '50px 50px 50px 50px' }}> */}
+                <div style={{ position: 'relative',  padding: '50px 50px 50px 50px' }}>
+                    <Steps current={current} //direction="vertical"
                         onChange={(index) => { setCurrent(index) }}>
                         {step.map(item => (
                             <Step key={item.title} title={item.title} description={item.description} />
@@ -57,7 +58,7 @@ function About(props) {
                     minHeight: '300px',
                     textAlign: 'left',
                     padding: '50px 50px 50px 50px',
-                    float: 'right',
+                    // float: 'right',
                     width: '50%',
                     fontSize: '16px'
                 }}><span style={{fontSize:'18px'}}>{step[current].subject}</span><br />{step[current].content}</div>
