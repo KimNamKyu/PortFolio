@@ -51,7 +51,7 @@ function Project(props) {
                 <div>
                     <Card title={item.content} headStyle={{ fontSize: '20px' }} style={{ boxShadow: '5px 5px 5px 5px gray', margin: '22px auto', width: '80%' }} >
                         {item.pj !== 'pj' ?
-                            <Slide transitionDuration={1000} style={{ marginBottom: '50px' }}>
+                            <Slide transitionDuration={300} infinite={true} indicators={true} autoplay={false} style={{ marginBottom: '50px' }}>
                                 {item.name.map((name) =>
                                     <div style={{ textAlign: 'center' }}>
                                         <Image src={require(`../img/${item.pj}/${name}.PNG`)} preview={false} style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', showQuickJumper: false }} onClick={() => window.open(item.git)} />

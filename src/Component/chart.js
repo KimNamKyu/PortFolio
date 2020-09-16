@@ -4,8 +4,8 @@ import ReactEcharts from 'echarts-for-react';
 let builderJson = {
     "all": 100,
     "charts": {
-        "node.js": 40,
         "Python": 50,
+        "node.js": 40,
         "Java": 60,
         "C#": 70,
         "javascript": 80,
