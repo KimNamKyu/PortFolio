@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Typography, Divider } from 'antd';
+import { Layout, Divider } from 'antd';
 
 function Skill(props) {
     const { Content } = Layout
@@ -22,7 +22,7 @@ function Skill(props) {
             <div style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>Skill</h2></div>
             {data.map((item, key) =>
                 <div style={{ width: '80%', margin: '0 auto'}}>
-                    <Divider orientation="left">{item.id}</Divider>
+                    <Divider orientation="left"><h3>{item.id}</h3></Divider>
                     {item.list.map((name) =>
                         <div style={{position:'relative', float:'left', textAlign:'center'}}>
                             <img src={require(`../img/skill/${name}.png`)}  style={{width:'100px', height:'100px',  margin:'10px 50px 10px 50px', border: '1px dashed #e9e9e9', borderRadius: '15px',}}/>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Layout, Steps } from 'antd';
+import { Layout, Steps, Divider } from 'antd';
+import Chart from './chart';
+import { HistoryOutlined, LikeOutlined, UserOutlined } from '@ant-design/icons';
 
 function About(props) {
     const { Content } = Layout
@@ -35,33 +37,38 @@ function About(props) {
     return (
         <Content style={{ height: '946px', background: '#fff', padding: "100px 50px 100px 50px", margin: '0 auto', width: '80%' }}>
             <div style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>About</h2></div>
-                <div style={{height:'250px', background:'blue', paddingTop: '50px' }}>
-                    test
+            <div style={{ height: '250px', padding: '50px 50px 50px 50px'  }}>
+                <Divider orientation="left" style={{ paddingRight: '50px' }}><h3> <UserOutlined style={{  paddingRight: '20px' }}/>About Me </h3></Divider>
+                <div style={{ padding: '5px 50px 5px 50px'  }}>
+                    <p>안녕하세요. 저는 웹개발자 입니다.</p>
+                    <p>안녕하세요. 저는 웹개발자 입니다.</p>
+                    <p>안녕하세요. 저는 웹개발자 입니다.</p>
                 </div>
-            <div style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>Career</h2></div>
-            <div>
-                {/* <div style={{ position: 'absolute', float: 'left', width: '40%', padding: '50px 50px 50px 50px' }}> */}
-                <div style={{ position: 'relative',  padding: '50px 50px 50px 50px' }}>
-                    <Steps current={current} //direction="vertical"
+            </div>
+            <div style={{ position: 'relative' }}>
+                <div style={{ float: 'left', width: '50%', padding: '50px 50px 50px 50px' }}>
+                    {/* <div style={{ position: 'relative',  padding: '50px 50px 20px 50px' }}> */}
+                    <Divider  orientation="left" style={{ paddingRight: '30px' }}> <h3> <HistoryOutlined style={{  paddingRight: '20px' }}/>Career </h3></Divider>
+                    <Steps size="small" current={current} direction="vertical"
                         onChange={(index) => { setCurrent(index) }}>
                         {step.map(item => (
-                            <Step key={item.title} title={item.title} description={item.description} />
+                            <Step key={item.title} title={item.title} subTitle={item.description} description={item.content} style={{ paddingBottom: '50px', marginLeft:'30px' }} />//
                         ))}
                     </Steps>
                 </div>
 
                 <div className="steps-content" style={{
-                    marginTop: '50px',
-                    border: '1px dashed #e9e9e9',
-                    borderRadius: '2px',
-                    backgroundColor: 'white',
-                    minHeight: '300px',
-                    textAlign: 'left',
-                    padding: '50px 50px 50px 50px',
-                    // float: 'right',
                     width: '50%',
+                    marginTop: '0 auto',
+                    backgroundColor: 'white',
+                    padding: '50px 50px 50px 50px',
+                    float: 'right',
                     fontSize: '16px'
-                }}><span style={{fontSize:'18px'}}>{step[current].subject}</span><br />{step[current].content}</div>
+                }}>
+                    {/* <span style={{fontSize:'18px'}}>{step[current].subject}</span><br />{step[current].content} */}
+                    <Divider orientation="left" style={{ paddingRight: '50px' }}><h3> <LikeOutlined style={{  paddingRight: '20px' }}/>Development Skills </h3> </Divider>
+                    <Chart />
+                </div>
             </div>
         </Content>
     );

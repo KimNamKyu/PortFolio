@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     documentRef.current.addEventListener('scroll', handelScroll);
     return () => documentRef.current.removeEventListener('scroll', handelScroll);
-  }, [scrollFlag])
+  }, [])
 
 
 
