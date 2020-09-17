@@ -46,7 +46,7 @@ function Project(props) {
     const { Meta } = Card
     return (
         <Content style={{ background: '#fff', padding: "100px 50px 100px 50px", margin: '0 auto', width: '80%' }}>
-            <div style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>Project</h2></div>
+            <div id="project" style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>Project</h2></div>
             {images.map((item, key) =>
                 <div>
                     <Card title={item.content} headStyle={{ fontSize: '20px' }} style={{ boxShadow: '5px 5px 5px 5px gray', margin: '22px auto', width: '80%' }} >

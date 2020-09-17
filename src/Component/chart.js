@@ -5,8 +5,8 @@ let builderJson = {
     "all": 100,
     "charts": {
         "Python": 50,
-        "node.js": 40,
         "Java": 60,
+        "node.js": 70,
         "C#": 70,
         "javascript": 80,
     }
@@ -84,7 +84,7 @@ class chart extends React.Component {
 
     render() {
         return (
-            <ReactEcharts option={this.getOption()} style={{height: '500px', width: '100%'}} />
+            <ReactEcharts option={this.getOption()} style={{height: '700px', width: '100%'}} />
         );
     }
 }

@@ -33,7 +33,7 @@ function App() {
   }
 
   return (
-    <div style={{ overflow: 'hidden' }} >
+    <div id="home" style={{ overflow: 'hidden' }} >
       <MainPage />
       <ContentPage />
       <Header menuCss={className} />

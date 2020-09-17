@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Layout, Menu } from 'antd';
 import { GithubOutlined } from '@ant-design/icons';
 function Header(props) {
@@ -14,6 +14,10 @@ function Header(props) {
       menu_activate:{overflow:'visible', height: '65px', position: 'fixed', background: 'rgba(255, 255, 255, 0.9)', width:'100%', transition: 'background 0.3s ease-in 0s', top: 0}
     }
   }
+  const [current, setCurrent] = useState(0);
+  const onfocus = () => {
+    // document.getElementById(value).scrollIntoView();
+  }
   return (
     <Layout>
       {/* <Head style={{ width: '100%', height: '65px', position: 'absolute', zindex: '10000', transition: 'background 0.3s ease-in 0s', top: 0, background: 'rgba(255,255,255,0.0)' }} }}> */}
@@ -23,9 +27,19 @@ function Header(props) {
         }}
           style={{ fontSize: '24px', paddingRight: '30px' }} />
         <span style={{ fontSize: '24px' }}>Southkyu PortFolio</span>
-        <Menu mode="horizontal" style={{ float: 'right', borderBottom: '#fff', paddingLeft: '15px', background: 'rgba(255,255,255,0.0)', fontSize: '18px' }}>
+        <Menu mode="horizontal" onClick={(index) => {
+          if(index.key === 'item_0'){
+            document.getElementById('home').scrollIntoView()
+          }else if(index.key === 'item_1'){
+            document.getElementById('about').scrollIntoView()
+          }else if(index.key === 'item_2'){
+            document.getElementById('skill').scrollIntoView()
+          }else if(index.key === 'item_3'){
+            document.getElementById('project').scrollIntoView()
+          }
+        }} style={{ float: 'right', borderBottom: '#fff', paddingLeft: '15px', background: 'rgba(255,255,255,0.0)', fontSize: '18px' }}>
           {['Home', 'About', 'Skill', 'Project'].map((item, index) => (
-            <Menu.Item style={{ textDecoration: "underline" }}>{item}</Menu.Item>
+            <Menu.Item style={{ textDecoration: "underline" }} >{item}</Menu.Item>
           ))}
         </Menu>
       </Head>

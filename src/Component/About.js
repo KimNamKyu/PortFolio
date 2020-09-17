@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Layout, Steps, Divider } from 'antd';
+import { Layout, Steps, Divider, Popconfirm } from 'antd';
 import Chart from './chart';
 import { HistoryOutlined, LikeOutlined, UserOutlined } from '@ant-design/icons';
-
+// import Popconfirm from './Popconfirm'
 function About(props) {
     const { Content } = Layout
     const { Step } = Steps
@@ -23,38 +23,41 @@ function About(props) {
             title: '응용 SW개발자 양성과정',
             description: "2018/09 ~ 2019/03",
             subject: '응용 SW개발자 양성과정 수료',
-            content: ''
+            content: '식당 Pos System 개발 / 웹사이트 로그 분석 시스템 개발'
         },
         {
             title: '더존비즈온',
             description: "2019/04 ~ ",
             subject: '더존비즈온',
-            content: 'WEHAGO 플랫폼 개발/운영',
+            content: 'WEHAGO플랫폼 SPA 개발/운영 / SmartA 응용프로그램 개발',
         }
     ]
     const [current, setCurrent] = useState(3);
 
     return (
         <Content style={{ height: '946px', background: '#fff', padding: "100px 50px 100px 50px", margin: '0 auto', width: '80%' }}>
-            <div style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>About</h2></div>
-            <div style={{ height: '250px', padding: '50px 50px 50px 50px'  }}>
-                <Divider orientation="left" style={{ paddingRight: '50px' }}><h3> <UserOutlined style={{  paddingRight: '20px' }}/>About Me </h3></Divider>
-                <div style={{ padding: '5px 50px 5px 50px'  }}>
-                    <p>안녕하세요. 저는 웹개발자 입니다.</p>
-                    <p>안녕하세요. 저는 웹개발자 입니다.</p>
-                    <p>안녕하세요. 저는 웹개발자 입니다.</p>
+            <div id="about" style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>About</h2></div>
+            <div style={{ height: '250px', padding: '50px 50px 50px 50px' }}>
+                <Divider orientation="left" style={{ paddingRight: '50px' }}><h3> <UserOutlined style={{ paddingRight: '20px' }} />About Me </h3></Divider>
+                <div style={{ padding: '5px 50px 5px 50px' }}>
+                    <p>안녕하세요. 성장하고 싶은 개발자 김남규 입니다.</p>
+                    {/* <p>주로 프로트엔드와 백엔드에 관심이 있습니다.</p> */}
+                    {/* <p>안녕하세요. 저는 웹개발자 입니다.</p> */}
+                    
                 </div>
             </div>
             <div style={{ position: 'relative' }}>
                 <div style={{ float: 'left', width: '50%', padding: '50px 50px 50px 50px' }}>
                     {/* <div style={{ position: 'relative',  padding: '50px 50px 20px 50px' }}> */}
-                    <Divider  orientation="left" style={{ paddingRight: '30px' }}> <h3> <HistoryOutlined style={{  paddingRight: '20px' }}/>Career </h3></Divider>
+                    <Divider orientation="left" style={{ paddingRight: '30px' }}> <h3> <HistoryOutlined style={{ paddingRight: '20px' }} />Career </h3></Divider>
+
                     <Steps size="small" current={current} direction="vertical"
-                        onChange={(index) => { setCurrent(index) }}>
+                        onChange={(index) => {setCurrent(index)}}>
                         {step.map(item => (
-                            <Step key={item.title} title={item.title} subTitle={item.description} description={item.content} style={{ paddingBottom: '50px', marginLeft:'30px' }} />//
+                            <Step key={item.title} title={item.title} subTitle={item.description} description={item.content} style={{ paddingBottom: '50px', marginLeft: '30px' }} />//
                         ))}
                     </Steps>
+
                 </div>
 
                 <div className="steps-content" style={{
@@ -66,7 +69,7 @@ function About(props) {
                     fontSize: '16px'
                 }}>
                     {/* <span style={{fontSize:'18px'}}>{step[current].subject}</span><br />{step[current].content} */}
-                    <Divider orientation="left" style={{ paddingRight: '50px' }}><h3> <LikeOutlined style={{  paddingRight: '20px' }}/>Development Skills </h3> </Divider>
+                    <Divider orientation="left" style={{ paddingRight: '50px' }}><h3> <LikeOutlined style={{ paddingRight: '20px' }} />Development Skills </h3> </Divider>
                     <Chart />
                 </div>
             </div>
