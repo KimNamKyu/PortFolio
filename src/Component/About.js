@@ -37,7 +37,7 @@ function About(props) {
     return (
         <Content style={{ height: '946px', background: '#fff', padding: "100px 50px 100px 50px", margin: '0 auto', width: '80%' }}>
             <div id="about" style={{ borderBottom: '2px dashed #e9e9e9' }}><h2 style={{ textAlign: 'center', fontSize: '38px' }}>About</h2></div>
-            <div style={{ height: '250px', padding: '50px 50px 50px 50px' }}>
+            <div style={{ height: '150px', padding: '10px 50px 0px 50px' }}>
                 <Divider orientation="left" style={{ paddingRight: '50px' }}><h3> <UserOutlined style={{ paddingRight: '20px' }} />About Me </h3></Divider>
                 <div style={{ padding: '5px 50px 5px 50px' }}>
                     <p>안녕하세요. 성장하고 싶은 개발자 김남규 입니다.</p>
