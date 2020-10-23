@@ -13,6 +13,15 @@ function Project(props) {
     // ]
     const images = [
         {
+            pj: 'pj',
+            name: ['portfolio'],
+            content: '리액트 hooks를 활용한 포트폴리오 개발',
+            tag: ['react', 'react-hooks', 'Javascript'],
+            git: 'https://kimnamkyu.github.io/portFolio/',
+            text: '리액트 hooks를 활용한 포트폴리오 개발',
+            term: '개발기간 :  2019.8.19 ~ 2019.9.17'
+        },
+        {
             pj: 'personpj',
             name: ['CLA1', 'CLA2', 'CLA3', 'CLA4', 'CLA5', 'CLA6', 'CLA7', 'CLA8', 'CLA9', 'CLA10', 'CLA11', 'CLA12', 'CLA13', 'CLA14', 'CLA15', 'CLA16', 'CLA17', 'CLA18', 'CLA19', 'CLA20'],
             content: '커뮤니티 웹사이트 로그분석 시스템 개발',
@@ -58,7 +67,11 @@ function Project(props) {
                                     </div>)}
                             </Slide> :
                             <div style={{ textAlign: 'center' }}>
-                                <Image src="error" preview={false} style={{ display: 'block', margin: '0 auto', minHeight: '340px' }} onClick={() => window.open(item.git)} />
+                                {item.name.map((name) => 
+                                    name !== '' ?
+                                    <Image src={require(`../img/${item.pj}/${name}.PNG`)} preview={false} style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto', showQuickJumper: false }} onClick={() => window.open(item.git)} /> :
+                                    <Image src="error" preview={false} style={{ display: 'block', margin: '0 auto', minHeight: '340px' }} onClick={() => window.open(item.git)} />
+                                )}
                             </div>}
                         <Divider />
                         <Meta avatar={<GithubOutlined onClick={() => { window.open(item.git) }} />} title={item.text} description={item.term} style={{ fontSize: '16px', marginBottom: '20px' }} />
